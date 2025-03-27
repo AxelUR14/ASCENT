@@ -23,7 +23,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #212529;
     background-color: #f9f9f9;
-    zoom:0.6;
+    zoom:0.9;
     transform-origin: top left;
 }
 
@@ -347,9 +347,9 @@ body, html {
 #menu-toggle {
     display: none; /* Oculta en desktop */
     position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 2000; /* Asegura que esté por encima de todo */
+    top: 15px;
+    left: 15px;
+    z-index: 1000; /* Asegura que esté por encima de todo */
     background: var(--sidebar-bg);
     border: 1px solid var(--sidebar-border);
     border-radius: 4px;

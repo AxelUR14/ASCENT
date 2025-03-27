@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuToggle && sidebar) {
         menuToggle.addEventListener('click', function() {
             sidebar.classList.toggle('active');
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.addEventListener('click', ()=>{
+                    sidebar.classList.remove('active');
+                });
+            });
         });
     }
 
