@@ -248,85 +248,9 @@ model-viewer {
 .gallery-item {
     cursor: pointer;
 }
-@media (max-width: 992px) {
-    .main-content {
-        padding: 30px;
-    }
-    
-    .logo-img {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .system-title {
-        font-size: 1.5rem;
-    }
 
-    /* 2 columnas en tablet */
-    .image-gallery,
-    .reports-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 768px) {
-    .app-container {
-        flex-direction: column;
-    }
-    
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    
-    .menu-list {
-        display: flex;
-        overflow-x: auto;
-        padding: 10px;
-    }
-    
-    .menu-item {
-        flex-direction: column;
-        min-width: 80px;
-        padding: 10px 5px;
-        text-align: center;
-    }
-    
-    .material-symbols-outlined {
-        margin-right: 0;
-        margin-bottom: 5px;
-        font-size: 20px;
-    }
-    
-    .menu-text {
-        font-size: 12px;
-    }
-    
-    .menu-separator {
-        display: none;
-    }
-    
-    .logo-central {
-        margin-bottom: 30px;
-    }
 
-    /* 1 columna en móvil */
-    .image-gallery,
-    .reports-container {
-        grid-template-columns: 1fr;
-    }
-
-    /* Ajuste de altura para móviles */
-    .gallery-item,
-    .report-card {
-        height: 250px;
-    }
-
-    .gallery-item img,
-    .report-card img {
-        height: 160px;
-    }}
 /* Tarjeta de imagen en reportes */
 .gallery-item { /* Reutiliza la clase de la galería */
     border-radius: 20px;
@@ -386,4 +310,8 @@ model-viewer {
 
 .gallery-item:hover .image-frame img {
     transform: scale(1.05);
+}
+body{
+    min-width: 1200px;
+    overflow-x: auto;
 }
