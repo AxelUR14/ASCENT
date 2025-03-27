@@ -343,3 +343,31 @@ body, html {
     flex-direction: row !important; 
     text-align: left !important; 
 }
+/* Estilos del botón toggle */
+#menu-toggle {
+    display: none; /* Oculta en desktop */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2000; /* Asegura que esté por encima de todo */
+    background: var(--sidebar-bg);
+    border: 1px solid var(--sidebar-border);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Solo muestra el botón en móviles */
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+    .sidebar {
+        transform: translateX(-100%); /* Oculta el menú inicialmente */
+        transition: transform 0.3s ease;
+    }
+    .sidebar.active {
+        transform: translateX(0); /* Muestra el menú al hacer clic */
+    }
+}

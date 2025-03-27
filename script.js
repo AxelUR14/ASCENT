@@ -8,7 +8,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal3D = document.getElementById("model3d-modal");
    const modelViewer = document.getElementById("model-viewer");
    const close3D = document.querySelector(".close-3d");
-    
+   document.addEventListener('DOMContentLoaded', function() {
+    // 1. Selectores del botón y menú
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+        });
+    }
+
+    // 2. Tus selectores actuales
+    const menuItems = document.querySelectorAll('.menu-item');
+    const contentViews = document.querySelectorAll('.content-view');
+    // ... resto de tu código ...
+});
     // Datos de ejemplo para la galería
     const galleryImages = [
         { url: 'youngla.jpeg',
