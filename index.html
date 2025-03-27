@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascent</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Menú Lateral -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="menu-list">
+                    <li>
+                        <a href="#" class="menu-item active" data-content="inicio">
+                            <span class="material-symbols-outlined">inicio</span>
+                            <span class="menu-text"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item" data-content="galeria">
+                            <span class="material-symbols-outlined">Youngla</span>
+                            <span class="menu-text"></span>
+                            <p></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item" data-content="reportes">
+                            <span class="material-symbols-outlined">Shark</span>
+                            <span class="menu-text"></span>
+                        </a>
+                    </li>
+                    <li class="menu-separator"></li>
+                    <li>
+                        <a href="#" class="menu-item" data-content="configuracion">
+                            <span class="material-symbols-outlined"></span>
+                            <span class="menu-text">Contactanos</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <!-- Logo Central -->
+            <div class="logo-central">
+                <img src="logo.jpeg" alt="" class="logo-img">
+                <h1 class="system-title">Ascent</h1>
+            </div>
+
+            <!-- Contenedor de Contenido Dinámico -->
+            <div class="content-frame">
+                <!-- Vista de Inicio -->
+                <div id="inicio-content" class="content-view active">
+                    <h2>Ropa Deportiva Importada</h2>
+                    <p>En el menu encontraras nuestro catalogo completo.</p>
+                </div>
+
+                <!-- Vista de Galería -->
+                <div id="galeria-content" class="content-view">
+                    <h2>Catalogo Youngla</h2>
+                    <div class="image-gallery"></div>
+                </div>
+
+                <!-- Vista de Reportes -->
+                <div id="reportes-content" class="content-view">
+                    <h2>Catalogo Shark</h2>
+                    <div class="reports-container"></div>
+                </div>
+
+                <!-- Vista de Configuración -->
+                <div id="configuracion-content" class="content-view">
+                    <h2>Contactanos</h2>
+                    <div class="settings-form"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+<!-- Modal 3D -->
+   <div id="image-modal" class="modal">
+       <span class="close">&times;</span>
+       <img id="modal-image" class="modal-content"src="" alt="imagen ampliada">
+           
+           </model-viewer>
+       </div>
+   </div>
+    <script src="script.js"></script>
+</body>
+</html>

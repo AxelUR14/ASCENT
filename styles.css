@@ -1,0 +1,389 @@
+/* Variables de color - Grises Pastel */
+:root {
+    --sidebar-bg: #f5f5f4;
+    --sidebar-border: #e7e5e4;
+    --menu-item-bg: #f8f9fa;
+    --menu-text: #6c757d;
+    --menu-text-hover: #495057;
+    --menu-text-active: #343a40;
+    --menu-active-bg: #cbd5e1;
+    --menu-active-border: #94a3b8;
+    --separator-color: #d6d3d1;
+    --content-bg: #ffffff;
+}
+
+/* Reset y Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #212529;
+    background-color: #f9f9f9;
+}
+
+/* Estructura Principal */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Menú Lateral */
+.sidebar {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav {
+    padding: 20px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-list {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    margin: 0 10px;
+    color: var(--menu-text);
+    text-decoration: none;
+    background-color: var(--menu-item-bg);
+    border-left: 4px solid transparent;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+    background-color: #e2e8f0;
+    color: var(--menu-text-hover);
+}
+
+.menu-item.active {
+    background-color: var(--menu-active-bg);
+    color: var(--menu-text-active);
+    border-left: 4px solid var(--menu-active-border);
+    font-weight: 500;
+}
+
+.material-symbols-outlined {
+    margin-right: 12px;
+    font-size: 22px;
+    color: #94a3b8;
+}
+
+.menu-text {
+    font-size: 14px;
+}
+
+.menu-separator {
+    height: 1px;
+    background-color: var(--separator-color);
+    margin: 15px 20px;
+    list-style: none;
+    opacity: 0.5;
+}
+
+/* Contenido Principal */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    background-color: var(--content-bg);
+}
+
+/* Logo Central */
+.logo-central {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.system-title {
+    color: #343a40;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Contenido Dinámico */
+.content-frame {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-view {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.content-view.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------- */
+/* ESTILOS AJUSTADOS PARA IMÁGENES */
+/* ------------------------- */
+
+/* Contenedor de galería y reportes */
+.image-gallery,
+.reports-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0px;
+    margin-top: 0px;
+}
+
+/* Tarjeta de imagen (ajuste compacto) */
+.gallery-item,
+.report-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 250px; /* Altura fija */
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover,
+.report-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Imágenes (tamaño controlado) */
+.gallery-item img,
+.report-card img {
+    width: 100%;
+    height: 280px; /* Altura fija */
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+/* Texto descriptivo */
+.gallery-caption,
+.report-caption {
+    padding: 12px;
+    background-color: #f8f9fa;
+    text-align: center;
+    color: #495057;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ------------------------- */
+/* RESPONSIVE DESIGN */
+/* ------------------------- */
+/* Modal 3D */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80vh;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+}
+
+/* Hacer imágenes clickeables */
+.gallery-item {
+    cursor: pointer;
+}
+@media (max-width: 992px) {
+    .main-content {
+        padding: 30px;
+    }
+    
+    .logo-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .system-title {
+        font-size: 1.5rem;
+    }
+
+    /* 2 columnas en tablet */
+    .image-gallery,
+    .reports-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    .menu-list {
+        display: flex;
+        overflow-x: auto;
+        padding: 10px;
+    }
+    
+    .menu-item {
+        flex-direction: column;
+        min-width: 80px;
+        padding: 10px 5px;
+        text-align: center;
+    }
+    
+    .material-symbols-outlined {
+        margin-right: 0;
+        margin-bottom: 5px;
+        font-size: 20px;
+    }
+    
+    .menu-text {
+        font-size: 12px;
+    }
+    
+    .menu-separator {
+        display: none;
+    }
+    
+    .logo-central {
+        margin-bottom: 30px;
+    }
+
+    /* 1 columna en móvil */
+    .image-gallery,
+    .reports-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajuste de altura para móviles */
+    .gallery-item,
+    .report-card {
+        height: 250px;
+    }
+
+    .gallery-item img,
+    .report-card img {
+        height: 160px;
+    }}
+/* Tarjeta de imagen en reportes */
+.gallery-item { /* Reutiliza la clase de la galería */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-caption {
+    padding: 12px;
+    text-align: center;
+    background: #f8f9fa;
+    color: #495057;
+}
+/* Marco para imágenes */
+.image-frame {
+    position: relative;
+    border: 8px solid gray; /* Color por defecto (azul) */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.image-frame img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+/* Texto del marco */
+.frame-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Efecto hover */
+.gallery-item:hover .image-frame {
+    border-color: black; /* Cambia color al pasar el mouse */
+}
+
+.gallery-item:hover .image-frame img {
+    transform: scale(1.05);
+}
