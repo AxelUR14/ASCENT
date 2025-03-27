@@ -37,7 +37,7 @@ body {
     background-color: var(--sidebar-bg);
     border-right: 1px solid var(--sidebar-border);
     height: 100vh;
-    position: sticky;
+    position: fixed;
     top: 0;
     transition: all 0.3s ease;
 }
@@ -314,4 +314,30 @@ model-viewer {
 body{
     min-width: 1200px;
     overflow-x: auto;
+}
+/* Reset forzar diseño desktop */
+body, html { 
+    min-width: 100%; 
+    overflow-x: hidden; 
+}
+
+.app-container { 
+    flex-direction: row !important; 
+}
+
+.sidebar { 
+    transform: none !important; 
+    width: 250px !important; 
+    position: fixed !important; 
+    display: block !important; 
+}
+
+.menu-list { 
+    flex-direction: column !important; 
+    overflow-x: visible !important; 
+}
+
+.menu-item { 
+    flex-direction: row !important; 
+    text-align: left !important; 
 }

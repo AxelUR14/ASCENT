@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Datos de ejemplo para reportes
     const reportsData = [
-        { url: 'youngla.jpeg', title: 'Modelo:' },
-        { url: '2.jpeg', title: 'Modelo' },
+        { url: 'youngla.jpeg', title: "" },
+        { url: '2.jpeg', title: '' },
         { url: '3.jpeg', title: '' },
         { url: '4.jpeg', title: '' },
         { url: '5.jpeg', title: '' },
