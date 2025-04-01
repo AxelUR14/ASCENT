@@ -5,51 +5,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const imageGallery = document.querySelector('.image-gallery');
     const reportsContainer = document.querySelector('.reports-container');
     const settingsForm = document.querySelector('.settings-form');
-    const modal3D = document.getElementById("model3d-modal");
-   const modelViewer = document.getElementById("model-viewer");
-   const close3D = document.querySelector(".close-3d");
-   document.addEventListener('DOMContentLoaded', function() {
-    // 1. Selectores del botón y menú
-    const menuToggle = document.getElementById('menu-toggle');
-    const sidebar = document.querySelector('.sidebar');
-    if (menuToggle && sidebar) {
-        menuToggle.addEventListener('click', function() {
-            sidebar.classList.toggle('active');
-            document.querySelectorAll('.menu-item').forEach(item => {
-                item.addEventListener('click', ()=>{
-                    sidebar.classList.remove('active');
-                });
-            });
-        });
-    }
-
-    // 2. Tus selectores actuales
-    const menuItems = document.querySelectorAll('.menu-item');
-    const contentViews = document.querySelectorAll('.content-view');
-    // ... resto de tu código ...
-});
+    
     // Datos de ejemplo para la galería
     const galleryImages = [
-        { url: 'youngla.jpeg',
-        title: 'Youngla',
-        frameText:"Attack of titans",
-        borderColor:"#ff0000"
-    },
-        { url: '2.jpeg', title: '' },
-        { url: '3.jpeg', title: '' },
-        { url: '4.jpeg', title: '' },
-        { url: '5.jpeg', title: '' },
-        { url: '6.jpeg', title: '' }
+        { url: 'https://source.unsplash.com/random/600x400?nature', title: 'Naturaleza' },
+        { url: 'https://source.unsplash.com/random/600x400?architecture', title: 'Arquitectura' },
+        { url: 'https://source.unsplash.com/random/600x400?technology', title: 'Tecnología' },
+        { url: 'https://source.unsplash.com/random/600x400?business', title: 'Negocios' },
+        { url: 'https://source.unsplash.com/random/600x400?people', title: 'Personas' },
+        { url: 'https://source.unsplash.com/random/600x400?food', title: 'Comida' }
     ];
     
     // Datos de ejemplo para reportes
     const reportsData = [
-        { url: 'youngla.jpeg', title: "" },
-        { url: '2.jpeg', title: '' },
-        { url: '3.jpeg', title: '' },
-        { url: '4.jpeg', title: '' },
-        { url: '5.jpeg', title: '' },
-        { url: '6.jpeg', title: '' }
+        { title: 'Ventas Mensuales', value: '$24,500', change: '+12%' },
+        { title: 'Usuarios Activos', value: '1,240', change: '+5%' },
+        { title: 'Tasa de Conversión', value: '3.2%', change: '-0.5%' }
     ];
     
     // Función para cargar la galería
@@ -58,46 +29,54 @@ document.addEventListener('DOMContentLoaded', function() {
         galleryImages.forEach(image => {
             const item = document.createElement('div');
             item.className = 'gallery-item';
-            const borderStyle = image.borderColor ? style="border-color:${image.borderColor}" : '';
             item.innerHTML = `
-                <div class="image-frame" ${borderStyle}>
-                    <img src="${image.url}" alt="${image.title}">
-                    <div class="frame-text">${image.frameText||""}</div>
+                <img src="${image.url}" alt="${image.title}">
+                <div class="gallery-caption">${image.title}</div>
             `;
-            item.addEventListener('click', () => openImageModal(image.url));
             imageGallery.appendChild(item);
         });
     }
     
     // Función para cargar reportes
     function loadReports() {
-        imageGallery.innerHTML = '';
-        galleryImages.forEach(image => {
-            const item = document.createElement('div');
-            item.className = 'gallery-item';
-            item.innerHTML = `
-                <img src="${image.url}" alt="${image.title}">
-                <div class="gallery-caption">${image.title}</div>
+        reportsContainer.innerHTML = '';
+        reportsData.forEach(report => {
+            const card = document.createElement('div');
+            card.className = 'report-card';
+            card.innerHTML = `
+                <h3>${report.title}</h3>
+                <p class="report-value">${report.value}</p>
+                <p class="report-change ${report.change.startsWith('+') ? 'positive' : 'negative'}">
+                    ${report.change}
+                </p>
             `;
-            item.addEventListener('click', () => openImageModal(image.url));
-            reportsContainer.appendChild(item);
+            reportsContainer.appendChild(card);
         });
-    
     }
     
-    
-    function openImageModal(imageUrl) {
-        const modal = document.getElementById("image-modal");
-        const modalImg = document.getElementById("modal-image");
-        modal.style.display = "block";
-        modalImg.src = imageUrl;
+    // Función para cargar configuración
+    function loadSettings() {
+        settingsForm.innerHTML = `
+            <form>
+                <div class="form-group">
+                    <label for="theme">Tema del Sistema</label>
+                    <select id="theme" class="form-control">
+                        <option value="light">Claro</option>
+                        <option value="dark">Oscuro</option>
+                        <option value="pastel">Pastel</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="notifications">Notificaciones</label>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="notifications" checked>
+                        <label for="notifications">Activar notificaciones</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn-save">Guardar Configuración</button>
+            </form>
+        `;
     }
-    
-    // Cerrar modal
-    document.querySelector(".close").addEventListener("click", () => {
-        document.getElementById("image-modal").style.display = "none";
-    });
-    
     
     // Función para cambiar vista
     function changeView(viewId) {
@@ -119,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'reportes':
                     loadReports();
                     break;
-                case 'contactanos':
+                case 'configuracion':
                     loadSettings();
                     break;
             }
