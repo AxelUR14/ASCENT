@@ -3,56 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ascent - Galería</title>
+    <title>Ascent</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="app-container">
-        <!-- Menú Lateral -->
-        <aside class="sidebar">
-            <nav class="sidebar-nav">
-                <ul class="menu-list">
-                    <li>
-                        <a href="#" class="menu-item active" data-content="inicio">
-                            <span class="menu-icon">🏠</span>
-                            <span class="menu-text">Inicio</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="menu-item" data-content="galeria">
-                            <span class="menu-icon">🖼️</span>
-                            <span class="menu-text">Galería</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="menu-item" data-content="reportes">
-                            <span class="menu-icon">📊</span>
-                            <span class="menu-text">Reportes</span>
-                        </a>
-                    </li>
-                </ul>
+        <!-- Menú -->
+        <header class="header">
+            <nav class="nav-bar">
+                <button class="nav-item active" data-section="inicio">Inicio</button>
+                <button class="nav-item" data-section="seccion1">Sección 1</button>
+                <button class="nav-item" data-section="seccion2">Sección 2</button>
+                <button class="nav-item" data-section="seccion3">Sección 3</button>
             </nav>
-        </aside>
+        </header>
 
         <!-- Contenido Principal -->
         <main class="main-content">
-            <!-- Contenedor de Contenido Dinámico -->
-            <div id="content-frame">
-                <div id="inicio-content" class="content-view active">
-                    <h1>Bienvenido a Ascent</h1>
-                    <p>Explora nuestra galería de productos exclusivos.</p>
-                </div>
+            <!-- Inicio -->
+            <section id="inicio" class="section active">
+                <h1>Ascent tienda de ropa deportiva importada</h1>
+                <p>En el menu encontraras nuestro catalogo completo dividido en secciones</p>
+            </section>
 
-                <div id="galeria-content" class="content-view">
-                    <h2>Nuestra Galería</h2>
-                    <div class="image-gallery"></div>
-                </div>
+            <!-- Sección 1 -->
+            <section id="seccion1" class="section">
+                <h2>Youngla</h2>
+                <div class="gallery"></div>
+            </section>
 
-                <div id="reportes-content" class="content-view">
-                    <h2>Reportes de Productos</h2>
-                    <div class="reports-container"></div>
-                </div>
-            </div>
+            <!-- Sección 2 -->
+            <section id="seccion2" class="section">
+                <h2>Shark</h2>
+                <div class="gallery"></div>
+            </section>
+
+            <!-- Sección 3 -->
+            <section id="seccion3" class="section">
+                <h2>Marca propia</h2>
+                <div class="gallery"></div>
+            </section>
         </main>
     </div>
 
