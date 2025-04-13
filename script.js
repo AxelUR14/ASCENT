@@ -1,57 +1,98 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
+    // Elementos del DOM
     const menuItems = document.querySelectorAll('.menu-item');
-    const sections = document.querySelectorAll('.content-section');
-
-    const galleryImages = [
-        { url: 'youngla.jpeg', title: 'Youngla 1' },
-        { url: '2.jpeg', title: 'Youngla 2' },
-        { url: '3.jpeg', title: 'Youngla 3' },
-        { url: '4.jpeg', title: 'Youngla 4' }
-    ];
-
-    const reportsData = [
-        { url: '5.jpeg', title: 'Shark 1' },
-        { url: '6.jpeg', title: 'Shark 2' }
-    ];
-
+    const contentViews = document.querySelectorAll('.content-view');
     const imageGallery = document.querySelector('.image-gallery');
-    const reportsContainer = document.querySelector('.reports-container');
+    const imageReports = document.querySelector('.image-reports');
 
+    // Datos de ejemplo para la galería
+    const galleryImages = [
+        { url: '2.jpeg', title: 'Galería 1' },
+        { url: '2.jpeg', title: 'Galería 2' },
+        { url: '3.jpeg', title: 'Galería 3' },
+        { url: '4.jpeg', title: 'Galería 4' },
+        { url: '5.jpeg', title: 'Galería 5' },
+        { url: '6.jpeg', title: 'Galería 6' },
+    ];
+
+    // Datos de ejemplo para reportes
+    const reportImages = [
+        { url: '1.jpeg', title: 'Reporte 1' },
+        { url: '2.jpeg', title: 'Reporte 2' },
+        { url: '3.jpeg', title: 'Reporte 3' },
+        { url: '4.jpeg', title: 'Reporte 4' },
+        { url: '5.jpeg', title: 'Reporte 5' },
+        { url: '6.jpeg', title: 'Reporte 6' },
+    ];
+
+    // Función para cargar la galería
+    function loadGallery() {
+        imageGallery.innerHTML = '';
+        galleryImages.forEach(({ url, title }) => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.innerHTML = `
+                <img src="${url}" alt="${title}">
+                <div class="gallery-caption">${title}</div>
+            `;
+            imageGallery.appendChild(item);
+        });
+    }
+
+    // Función para cargar reportes
+    function loadReports() {
+        imageReports.innerHTML = '';
+        reportImages.forEach(({ url, title }) => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.innerHTML = `
+                <img src="${url}" alt="${title}">
+                <div class="gallery-caption">${title}</div>
+            `;
+            imageReports.appendChild(item);
+        });
+    }
+
+    // Función para cambiar vista
+    function changeView(viewId) {
+        // Ocultar todas las vistas
+        contentViews.forEach(view => {
+            view.classList.remove('active');
+        });
+
+        // Mostrar la vista seleccionada
+        const selectedView = document.getElementById(`${viewId}-content`);
+        if (selectedView) {
+            selectedView.classList.add('active');
+
+            // Cargar contenido dinámico según la vista
+            if (viewId === 'galeria') {
+                loadGallery();
+            } else if (viewId === 'reportes') {
+                loadReports();
+            }
+        }
+    }
+
+    // Event listeners para los items del menú
     menuItems.forEach(item => {
-        item.addEventListener('click', e => {
+        item.addEventListener('click', function (e) {
             e.preventDefault();
-            menuItems.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
 
-            const targetId = item.getAttribute('data-target');
-            sections.forEach(section => {
-                section.classList.toggle('active', section.id === targetId);
+            // Remover clase active de todos los items
+            menuItems.forEach(i => {
+                i.classList.remove('active');
             });
+
+            // Añadir clase active al item clickeado
+            this.classList.add('active');
+
+            // Cambiar la vista
+            const contentId = this.getAttribute('data-content');
+            changeView(contentId);
         });
     });
 
-    function loadGallery() {
-        imageGallery.innerHTML = galleryImages.map(
-            img => `
-                <div class="gallery-item">
-                    <img src="${img.url}" alt="${img.title}">
-                    <div class="gallery-caption">${img.title}</div>
-                </div>
-            `
-        ).join('');
-    }
-
-    function loadReports() {
-        reportsContainer.innerHTML = reportsData.map(
-            report => `
-                <div class="report-card">
-                    <img src="${report.url}" alt="${report.title}">
-                    <div class="report-caption">${report.title}</div>
-                </div>
-            `
-        ).join('');
-    }
-
+    // Inicializar la vista de inicio
     loadGallery();
-    loadReports();
 });

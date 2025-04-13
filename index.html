@@ -3,68 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ascent</title>
+    <title>Ascent - Galería</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
 </head>
 <body>
     <div class="app-container">
-        <!-- Menú inferior para móviles -->
-        <nav class="mobile-nav">
-            <ul class="menu-list">
-                <li>
-                    <a href="#" class="menu-item active" data-target="inicio">
-                        <span class="material-symbols-outlined">home</span>
-                        <span class="menu-text">Inicio</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="menu-item" data-target="galeria">
-                        <span class="material-symbols-outlined">image</span>
-                        <span class="menu-text">Galería</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="menu-item" data-target="reportes">
-                        <span class="material-symbols-outlined">description</span>
-                        <span class="menu-text">Reportes</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="menu-item" data-target="contactanos">
-                        <span class="material-symbols-outlined">contact_support</span>
-                        <span class="menu-text">Contacto</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <!-- Menú Lateral -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="menu-list">
+                    <li>
+                        <a href="#" class="menu-item active" data-content="inicio">
+                            <span class="menu-icon">🏠</span>
+                            <span class="menu-text">Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item" data-content="galeria">
+                            <span class="menu-icon">🖼️</span>
+                            <span class="menu-text">Galería</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item" data-content="reportes">
+                            <span class="menu-icon">📊</span>
+                            <span class="menu-text">Reportes</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
 
-        <!-- Contenido principal -->
+        <!-- Contenido Principal -->
         <main class="main-content">
-            <div id="inicio" class="content-section active">
-                <h2>Ropa Deportiva Importada</h2>
-                <p>En el menú encontrarás nuestro catálogo completo.</p>
-            </div>
-            <div id="galeria" class="content-section">
-                <h2>Catálogo Youngla</h2>
-                <div class="image-gallery"></div>
-            </div>
-            <div id="reportes" class="content-section">
-                <h2>Catálogo Shark</h2>
-                <div class="reports-container"></div>
-            </div>
-            <div id="contactanos" class="content-section">
-                <h2>Contáctanos</h2>
-                <form class="contact-form">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" placeholder="Tu nombre">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" placeholder="Escribe tu mensaje"></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
+            <!-- Contenedor de Contenido Dinámico -->
+            <div id="content-frame">
+                <div id="inicio-content" class="content-view active">
+                    <h1>Bienvenido a Ascent</h1>
+                    <p>Explora nuestra galería de productos exclusivos.</p>
+                </div>
+
+                <div id="galeria-content" class="content-view">
+                    <h2>Nuestra Galería</h2>
+                    <div class="image-gallery"></div>
+                </div>
+
+                <div id="reportes-content" class="content-view">
+                    <h2>Reportes de Productos</h2>
+                    <div class="reports-container"></div>
+                </div>
             </div>
         </main>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
