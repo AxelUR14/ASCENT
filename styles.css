@@ -83,18 +83,29 @@ body {
 
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
+    body {
+        margin: 0;
+        font-size: 16px;
+    }
+
     .menu {
         flex-direction: column;
     }
 
     .menu-item {
         margin: 5px 0;
+        font-size: 18px;
+        padding: 12px 0;
     }
 
     .image-gallery,
     .image-reports {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 5px;
+    }
+
+    .gallery-item img {
+        border-radius: 8px;
     }
 
     .gallery-caption {
