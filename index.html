@@ -3,82 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema con Menú Lateral</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <title>Ascent</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
 </head>
 <body>
     <div class="app-container">
-        <!-- Menú Lateral -->
-        <aside class="sidebar">
-            <nav class="sidebar-nav">
-                <ul class="menu-list">
-                    <li>
-                        <a href="#" class="menu-item active" data-content="inicio">
-                            <span class="material-symbols-outlined">home</span>
-                            <span class="menu-text">Inicio</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="menu-item" data-content="galeria">
-                            <span class="material-symbols-outlined">photo_library</span>
-                            <span class="menu-text">Galería</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="menu-item" data-content="reportes">
-                            <span class="material-symbols-outlined">assessment</span>
-                            <span class="menu-text">Reportes</span>
-                        </a>
-                    </li>
-                    <li class="menu-separator"></li>
-                    <li>
-                        <a href="#" class="menu-item" data-content="configuracion">
-                            <span class="material-symbols-outlined">settings</span>
-                            <span class="menu-text">Configuración</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
+        <!-- Menú inferior para móviles -->
+        <nav class="mobile-nav">
+            <ul class="menu-list">
+                <li>
+                    <a href="#" class="menu-item active" data-target="inicio">
+                        <span class="material-symbols-outlined">home</span>
+                        <span class="menu-text">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="menu-item" data-target="galeria">
+                        <span class="material-symbols-outlined">image</span>
+                        <span class="menu-text">Galería</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="menu-item" data-target="reportes">
+                        <span class="material-symbols-outlined">description</span>
+                        <span class="menu-text">Reportes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="menu-item" data-target="contactanos">
+                        <span class="material-symbols-outlined">contact_support</span>
+                        <span class="menu-text">Contacto</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
-        <!-- Contenido Principal -->
+        <!-- Contenido principal -->
         <main class="main-content">
-            <!-- Logo Central -->
-            <div class="logo-central">
-                <img src="assets/logo.png" alt="Logo de la empresa" class="logo-img">
-                <h1 class="system-title">Sistema de Gestión</h1>
+            <div id="inicio" class="content-section active">
+                <h2>Ropa Deportiva Importada</h2>
+                <p>En el menú encontrarás nuestro catálogo completo.</p>
             </div>
-
-            <!-- Contenedor de Contenido Dinámico -->
-            <div class="content-frame">
-                <!-- Vista de Inicio -->
-                <div id="inicio-content" class="content-view active">
-                    <h2>Bienvenido al Sistema</h2>
-                    <p>Selecciona una opción del menú para comenzar.</p>
-                </div>
-
-                <!-- Vista de Galería -->
-                <div id="galeria-content" class="content-view">
-                    <h2>Galería de Imágenes</h2>
-                    <div class="image-gallery"></div>
-                </div>
-
-                <!-- Vista de Reportes -->
-                <div id="reportes-content" class="content-view">
-                    <h2>Reportes Estadísticos</h2>
-                    <div class="reports-container"></div>
-                </div>
-
-                <!-- Vista de Configuración -->
-                <div id="configuracion-content" class="content-view">
-                    <h2>Configuración del Sistema</h2>
-                    <div class="settings-form"></div>
-                </div>
+            <div id="galeria" class="content-section">
+                <h2>Catálogo Youngla</h2>
+                <div class="image-gallery"></div>
+            </div>
+            <div id="reportes" class="content-section">
+                <h2>Catálogo Shark</h2>
+                <div class="reports-container"></div>
+            </div>
+            <div id="contactanos" class="content-section">
+                <h2>Contáctanos</h2>
+                <form class="contact-form">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" placeholder="Tu nombre">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" placeholder="Escribe tu mensaje"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
             </div>
         </main>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
