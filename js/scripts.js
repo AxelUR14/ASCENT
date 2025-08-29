@@ -227,3 +227,19 @@ sh.find(srcPath).forEach(filePath => {
 // Iniciar observación de cambios y servidor de desarrollo
 watchFiles();
 startDevServer();
+// Selecciona todas las imágenes de la página
+
+// Selecciona todas las imágenes
+const imagenes = document.querySelectorAll("img");
+
+imagenes.forEach(img => {
+  img.addEventListener("click", () => {
+    // Si hay otra expandida, la cierra
+    document.querySelectorAll(".expandida").forEach(exp => {
+      if (exp !== img) exp.classList.remove("expandida");
+    });
+
+    // Alterna expandir/volver a tamaño normal
+    img.classList.toggle("expandida");
+  });
+});

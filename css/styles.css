@@ -10824,3 +10824,12 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+img {
+  transition: transform 0.3s ease; /* animación suave */
+  cursor: pointer;
+}
+
+img.expandida {
+  transform: scale(2); /* agranda al doble */
+  z-index: 1000;       /* queda por encima */
+}
