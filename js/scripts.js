@@ -227,19 +227,28 @@ sh.find(srcPath).forEach(filePath => {
 // Iniciar observación de cambios y servidor de desarrollo
 watchFiles();
 startDevServer();
-// Selecciona todas las imágenes de la página
-
-// Selecciona todas las imágenes
-const imagenes = document.querySelectorAll("img");
-
-imagenes.forEach(img => {
-  img.addEventListener("click", () => {
-    // Si hay otra expandida, la cierra
-    document.querySelectorAll(".expandida").forEach(exp => {
-      if (exp !== img) exp.classList.remove("expandida");
-    });
-
-    // Alterna expandir/volver a tamaño normal
-    img.classList.toggle("expandida");
-  });
-});
+// Selecciondocument.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("imgModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeBtn = document.querySelector(".close-modal");
+      
+        document.querySelectorAll(".card-img-top").forEach(img => {
+          img.addEventListener("click", () => {
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+          });
+        });
+      
+        closeBtn.addEventListener("click", () => {
+          modal.style.display = "none";
+        });
+      
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            modal.style.display = "none";
+          }
+        });
+      });
+      
