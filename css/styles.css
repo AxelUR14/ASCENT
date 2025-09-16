@@ -10868,3 +10868,23 @@ textarea.form-control-lg {
 .close-modal:hover {
   color: #bbb;
 }
+.btn-instagram {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: #E4405F; /* Color típico de Instagram */
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.btn-instagram img {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-instagram:hover {
+  transform: scale(1.1);
+}
