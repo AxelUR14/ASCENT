@@ -10894,8 +10894,8 @@ textarea.form-control-lg {
 /* Para pantallas móviles */
 @media (max-width: 600px) {
   .btn-instagram {
-      width: 45px;
-      height: 45px;
+      width: 55px;
+      height: 55px;
       bottom: 15px;
       right: 15px;
       padding: 8px;
