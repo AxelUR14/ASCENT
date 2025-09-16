@@ -10868,23 +10868,42 @@ textarea.form-control-lg {
 .close-modal:hover {
   color: #bbb;
 }
+
 .btn-instagram {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 999;
-  background-color: #E4405F; /* Color típico de Instagram */
+  background-color: #E4405F;
   border-radius: 50%;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
 }
 
 .btn-instagram img {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
-.btn-instagram:hover {
-  transform: scale(1.1);
+/* Reglas para pantallas pequeñas */
+@media (max-width: 600px) {
+  .btn-instagram {
+      width: 45px;
+      height: 45px;
+      bottom: 15px;
+      right: 15px;
+      padding: 8px;
+  }
+
+  .btn-instagram img {
+      width: 20px;
+      height: 20px;
+  }
 }
