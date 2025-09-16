@@ -10878,12 +10878,11 @@ textarea.form-control-lg {
   border-radius: 50%;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
 }
 
 .btn-instagram img {
@@ -10892,7 +10891,7 @@ textarea.form-control-lg {
   object-fit: contain;
 }
 
-/* Reglas para pantallas pequeñas */
+/* Para pantallas móviles */
 @media (max-width: 600px) {
   .btn-instagram {
       width: 45px;
@@ -10903,7 +10902,8 @@ textarea.form-control-lg {
   }
 
   .btn-instagram img {
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
   }
 }
+
