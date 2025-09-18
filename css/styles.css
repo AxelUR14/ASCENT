@@ -10907,3 +10907,37 @@ textarea.form-control-lg {
   }
 }
 
+/* Modal background */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+  cursor: zoom-out;
+}
+
+/* Imagen expandida */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+/* Botón de cierre */
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}

@@ -13,9 +13,12 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <script src="js/scripts.js"></script>
-        
-          
- 
+        <!-- Incluye CSS y JS de Lightbox en tu <head> -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+>
+        <!-- Imagen que se muestra en tu web -->
+
  
     </head>
     <body>
@@ -70,7 +73,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="youngla boxy.jpeg" alt="prueba2" />
+                            <img class="card-img-top" src="youngla boxy.jpeg" alt="prueba2" onclick="expandImage(this)" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -92,7 +95,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"></div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="youngla ufc.jpeg" alt="prueba3.jpeg" />
+                            <img class="card-img-top" src="prueba2.jpeg" alt="..." onclick="expandImage(this)" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -122,7 +125,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"></div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="youngla blanca.jpeg" alt="..." />
+                            <img class="card-img-top" src="youngla blanca.jpeg" alt="..." onclick="expandImage(this)" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -142,7 +145,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="youngla caras.jpeg" alt="..." />
+                            <img class="card-img-top" src="youngla caras.jpeg" alt="..." onclick="expandImage(this)"/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -172,7 +175,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"></div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="youngla gris.jpeg" alt="..." />
+                            <img class="card-img-top" src="youngla gris.jpeg" alt="..." onclick="expandImage(this)" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -192,7 +195,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="youngla negra.jpeg" alt="..." />
+                            <img class="card-img-top" src="youngla negra.jpeg" alt="..."  onclick="expandImage(this)"/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -213,7 +216,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"></div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="youngla blana.jpeg" alt="..." />
+                            <img class="card-img-top" src="youngla blana.jpeg" alt="..." onclick="expandImage(this)" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -242,7 +245,7 @@
                         <div class="card h-100">
                             <!-- Product image-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta Especial</div>
-                            <img class="card-img-top" src="oferta youngla.jpeg" alt="..." />
+                            <img class="card-img-top" src="oferta youngla.jpeg" alt="..." onclick="expandImage(this)" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -277,7 +280,7 @@
                         <div class="col mb-5">
                             <div class="card h-100">
                                 <!-- Product image-->
-                                <img class="card-img-top" src="roja.jpeg" alt="prueba2.jpeg" />
+                                <img class="card-img-top" src="roja.jpeg" alt="prueba2.jpeg" onclick="expandImage(this)" />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -299,7 +302,7 @@
                                 <!-- Sale badge-->
                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"></div>
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gymshark2.jpeg" alt="prueba3.jpeg" />
+                                <img class="card-img-top" src="gymshark2.jpeg" alt="prueba3.jpeg" onclick="expandImage(this)" />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -329,7 +332,7 @@
                                 <!-- Sale badge-->
                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gymsharkamarilla.jpeg" alt="..." />
+                                <img class="card-img-top" src="gymsharkamarilla.jpeg" alt="..." onclick="expandImage(this)" />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -349,7 +352,7 @@
                         <div class="col mb-5">
                             <div class="card h-100">
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gymshark3.jpeg" alt="..." />
+                                <img class="card-img-top" src="gymshark3.jpeg" alt="..." onclick="expandImage(this)" />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -381,7 +384,7 @@
                                 <!-- Sale badge-->
                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"></div>
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gris1.jpeg" alt="..." />
+                                <img class="card-img-top" src="gris1.jpeg" alt="..."  onclick="expandImage(this)"/>
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -401,7 +404,7 @@
                         <div class="col mb-5">
                             <div class="card h-100">
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gymshark5.jpeg" alt="..." />
+                                <img class="card-img-top" src="gymshark5.jpeg" alt="..." onclick="expandImage(this)" />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -422,7 +425,7 @@
                                 <!-- Sale badge-->
                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gymsharkfrente.jpeg" alt="..." />
+                                <img class="card-img-top" src="gymsharkfrente.jpeg" alt="..." onclick="expandImage(this)" />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -450,7 +453,7 @@
                         <div class="col mb-5">
                             <div class="card h-100">
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gris2.jpeg" alt="..." />
+                                <img class="card-img-top" src="gris2.jpeg" alt="..."  onclick="expandImage(this)"/>
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -486,7 +489,7 @@
                         <div class="col mb-5">
                             <div class="card h-100">
                                 <!-- Product image-->
-                                <img class="card-img-top" src="oferta.jpeg" alt="prueba2.jpeg" />
+                                <img class="card-img-top" src="oferta.jpeg" alt="prueba2.jpeg" onclick="expandImage(this)" />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -508,7 +511,8 @@
                                 <!-- Sale badge-->
                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"></div>
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gymshark2.jpeg" alt="prueba3.jpeg" />
+                                <img class="card-img-top" src="gymshark2.jpeg" alt="prueba3.jpeg" onclick="expandImage(this)" />
+                                
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -570,7 +574,11 @@
 <a href="https://www.instagram.com/ascent.7" target="_blank" class="btn-instagram" title="Seguinos en Instagram">
     <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" />
 </a>
-
+<!-- Modal para mostrar imagen expandida -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="expandedImg" onclick="closeModal()">
+  </div>
   
 
     </body>

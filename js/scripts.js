@@ -251,4 +251,26 @@ startDevServer();
           }
         });
       });
+      function expandImage(imgElement) {
+        var modal = document.getElementById("imageModal");
+        var expandedImg = document.getElementById("expandedImg");
+        modal.style.display = "block";
+        expandedImg.src = imgElement.src;
+      }
+      
+      function closeModal() {
+        var modal = document.getElementById("imageModal");
+        modal.style.display = "none";
+      }
+      function expandImage(imgElement) {
+        const modal = document.getElementById("imageModal");
+        const expandedImg = document.getElementById("expandedImg");
+        expandedImg.src = imgElement.src;
+        modal.style.display = "block";
+      }
+      
+      function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.style.display = "none";
+      }
       
