@@ -251,26 +251,24 @@ startDevServer();
           }
         });
       });
-      function expandImage(imgElement) {
-        var modal = document.getElementById("imageModal");
-        var expandedImg = document.getElementById("expandedImg");
+      function expandImage(imgElement, secondImgSrc = null) {
+        const modal = document.getElementById("imageModal");
+        const img1 = document.getElementById("expandedImg1");
+        const img2 = document.getElementById("expandedImg2");
+      
+        img1.src = imgElement.src;
+      
+        if (secondImgSrc) {
+          img2.src = secondImgSrc;
+          img2.style.display = "block";
+        } else {
+          img2.style.display = "none";
+        }
+      
         modal.style.display = "block";
-        expandedImg.src = imgElement.src;
       }
       
       function closeModal() {
-        var modal = document.getElementById("imageModal");
-        modal.style.display = "none";
-      }
-      function expandImage(imgElement) {
-        const modal = document.getElementById("imageModal");
-        const expandedImg = document.getElementById("expandedImg");
-        expandedImg.src = imgElement.src;
-        modal.style.display = "block";
-      }
-      
-      function closeModal() {
-        const modal = document.getElementById("imageModal");
-        modal.style.display = "none";
+        document.getElementById("imageModal").style.display = "none";
       }
       

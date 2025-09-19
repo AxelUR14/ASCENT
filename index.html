@@ -73,7 +73,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="youngla boxy.jpeg" alt="prueba2" onclick="expandImage(this)" />
+                            <img class="card-img-top" src="cambio.jpeg" alt="prueba2" onclick="expandImage(this)" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -95,7 +95,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"></div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="prueba2.jpeg" alt="..." onclick="expandImage(this)" />
+                            <img class="card-img-top" src="prueba2.jpeg" alt="..." onclick="expandImage(this,'')" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -280,7 +280,7 @@
                         <div class="col mb-5">
                             <div class="card h-100">
                                 <!-- Product image-->
-                                <img class="card-img-top" src="roja.jpeg" alt="prueba2.jpeg" onclick="expandImage(this)" />
+                                <img class="card-img-top" src="roja.jpeg" alt="prueba2.jpeg" onclick="expandImage(this ,'shark1.jpeg' )" />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -302,7 +302,7 @@
                                 <!-- Sale badge-->
                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"></div>
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gymshark2.jpeg" alt="prueba3.jpeg" onclick="expandImage(this)" />
+                                <img class="card-img-top" src="gymshark2.jpeg" alt="prueba3.jpeg" onclick="expandImage(this ,'blancafrente.jpeg' )" />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -332,7 +332,7 @@
                                 <!-- Sale badge-->
                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gymsharkamarilla.jpeg" alt="..." onclick="expandImage(this)" />
+                                <img class="card-img-top" src="gymsharkamarilla.jpeg" alt="..." onclick="expandImage(this ,'amarillafrente.jpeg')" />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -352,7 +352,7 @@
                         <div class="col mb-5">
                             <div class="card h-100">
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gymshark3.jpeg" alt="..." onclick="expandImage(this)" />
+                                <img class="card-img-top" src="gymshark3.jpeg" alt="..." onclick="expandImage(this ,'')" />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -384,7 +384,7 @@
                                 <!-- Sale badge-->
                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"></div>
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gris1.jpeg" alt="..."  onclick="expandImage(this)"/>
+                                <img class="card-img-top" src="gris1.jpeg" alt="..."  onclick="expandImage(this ,'frente5.jpeg' )"/>
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -404,7 +404,7 @@
                         <div class="col mb-5">
                             <div class="card h-100">
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gymshark5.jpeg" alt="..." onclick="expandImage(this)" />
+                                <img class="card-img-top" src="gymshark5.jpeg" alt="..." onclick="expandImage(this ,'dorso6.jpeg')" />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -453,7 +453,8 @@
                         <div class="col mb-5">
                             <div class="card h-100">
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gris2.jpeg" alt="..."  onclick="expandImage(this)"/>
+                                <!-- Product image-->
+                                <img class="card-img-top" src="gris2.jpeg" alt="..."  onclick="expandImage(this,'gr.jpeg'  )"/>
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -511,7 +512,7 @@
                                 <!-- Sale badge-->
                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"></div>
                                 <!-- Product image-->
-                                <img class="card-img-top" src="gymshark2.jpeg" alt="prueba3.jpeg" onclick="expandImage(this)" />
+                                <img class="card-img-top" src="gymshark2.jpeg" alt="prueba3.jpeg" onclick="expandImage(this ,'')" />
                                 
                                 <!-- Product details-->
                                 <div class="card-body p-4">
@@ -575,10 +576,19 @@
     <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" />
 </a>
 <!-- Modal para mostrar imagen expandida -->
-<div id="imageModal" class="modal">
+<!--<div id="imageModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <img class="modal-content" id="expandedImg" onclick="closeModal()">
+  </div>-->
+  <!-- Modal para mostrar dos imágenes -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-images">
+      <img id="expandedImg1" class="modal-img" onclick="closeModal()">
+      <img id="expandedImg2" class="modal-img" onclick="closeModal()">
+    </div>
   </div>
+  
   
 
     </body>
